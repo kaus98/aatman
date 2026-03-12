@@ -1,0 +1,164 @@
+.contact-section {
+    background-color: var(--color-bg-lighter);
+    padding: 10rem 4rem 2rem;
+    /* Increased top padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1400px;
+    margin: 0 auto auto;
+    /* Push footer down */
+    flex-grow: 1;
+}
+
+.contact-info h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.contact-details {
+    margin-top: 3rem;
+}
+
+.contact-details p {
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-sans);
+    font-weight: 300;
+}
+
+.contact-details strong {
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 0;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    transition: border-color var(--transition-fast);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-accent);
+}
+
+.submit-btn {
+    background: var(--color-text-primary);
+    color: var(--color-bg-dark);
+    border: none;
+    padding: 1.2rem 3rem;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: all var(--transition-slow);
+}
+
+.submit-btn:hover {
+    background: var(--color-accent);
+    color: var(--color-bg-dark);
+    box-shadow: 0 0 20px rgba(196, 167, 119, 0.3);
+}
+
+.instagram-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.insta-btn {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem 3rem;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-slow);
+    backdrop-filter: blur(5px);
+    text-decoration: none;
+}
+
+.insta-btn:hover {
+    background: var(--color-text-primary);
+    color: var(--color-bg-dark);
+    border-color: var(--color-text-primary);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .contact-section {
+        padding: 8rem 2rem 2rem;
+    }
+
+    .contact-info h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 7rem 1.5rem 1.5rem;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .contact-container {
+        gap: 2.5rem;
+    }
+}
