@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { HiMenuAlt4, HiX, HiOutlineHome, HiOutlinePhotograph, HiOutlineMail } from 'react-icons/hi';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -36,9 +36,9 @@ const Navbar = () => {
                     <HiX className="close-icon" />
                 </button>
                 <ul className="nav-links">
-                    <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-                    <li><Link to="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>
-                    <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact Space</Link></li>
+                    <li><Link to="/" onClick={() => setIsOpen(false)}><HiOutlineHome /> Home</Link></li>
+                    <li><Link to="/gallery" onClick={() => setIsOpen(false)}><HiOutlinePhotograph /> Gallery</Link></li>
+                    <li><Link to="/contact-space" onClick={() => setIsOpen(false)}><HiOutlineMail /> Contact Space</Link></li>
                 </ul>
             </div>
         </>

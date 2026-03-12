@@ -25,6 +25,9 @@ const Contact = () => {
                             <input type="email" placeholder="Email Address" required />
                         </div>
                         <div className="input-group">
+                            <input type="tel" placeholder="Mobile Number" required />
+                        </div>
+                        <div className="input-group">
                             <textarea placeholder="Tell us about the experience you seek..." rows="5" required></textarea>
                         </div>
                         <button type="button" className="submit-btn" onClick={(e) => { e.preventDefault(); alert("Inquiry sent successfully. We will reach out to you shortly."); }}>Send Inquiry</button>

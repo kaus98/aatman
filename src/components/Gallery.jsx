@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import { HiOutlineX, HiOutlineArrowsExpand, HiOutlineMinus, HiOutlineDownload, HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import './Gallery.css';
 
 const Gallery = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(null);
     const [isMaximized, setIsMaximized] = useState(false);
 
-    const openModal = (img) => {
-        setSelectedImage(img);
+    const openModal = (index) => {
+        setSelectedIndex(index);
         setIsMaximized(false);
         document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
-        setSelectedImage(null);
+        setSelectedIndex(null);
         document.body.style.overflow = 'auto';
     };
 
@@ -20,6 +21,7 @@ const Gallery = () => {
         e.stopPropagation();
         setIsMaximized(!isMaximized);
     };
+
     const galleryFiles = import.meta.glob('/public/gallery/*.{jpg,jpeg,png,JPG}', { eager: true });
     
     const images = Object.keys(galleryFiles).map(path => {
@@ -30,6 +32,33 @@ const Gallery = () => {
         };
     });
 
+    const nextImage = (e) => {
+        e.stopPropagation();
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex + 1) % images.length);
+        }
+    };
+
+    const prevImage = (e) => {
+        e.stopPropagation();
+        if (selectedIndex !== null) {
+            setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+        }
+    };
+
+    const downloadImage = (e) => {
+        e.stopPropagation();
+        if (selectedIndex !== null) {
+            const currentImg = images[selectedIndex];
+            const link = document.createElement('a');
+            link.href = currentImg.src;
+            link.download = currentImg.src.split('/').pop() || 'aatman-image.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    };
+
     return (
         <section id="gallery" className="gallery-section">
             <div className="section-header">
@@ -38,23 +67,34 @@ const Gallery = () => {
             </div>
             <div className="gallery-grid">
                 {images.map((img, idx) => (
-                    <div key={idx} className="gallery-item" onClick={() => openModal(img.src)}>
+                    <div key={idx} className="gallery-item" onClick={() => openModal(idx)}>
                         <img src={img.thumb} alt={`Aatman Space ${idx + 1}`} loading="lazy" />
                         <div className="img-overlay"></div>
                     </div>
                 ))}
             </div>
 
-            {selectedImage && (
+            {selectedIndex !== null && (
                 <div className="modal-overlay" onClick={closeModal}>
-                    <button className="modal-close" onClick={closeModal} aria-label="Close modal">&times;</button>
+                    <button className="modal-close" onClick={closeModal} aria-label="Close modal">
+                        <HiOutlineX />
+                    </button>
                     <button className="modal-maximize" onClick={toggleMaximize} aria-label={isMaximized ? "Minimize" : "Maximize"}>
-                        {isMaximized ? '⤓' : '⤢'}
+                        {isMaximized ? <HiOutlineMinus /> : <HiOutlineArrowsExpand />}
+                    </button>
+                    <button className="modal-download" onClick={downloadImage} aria-label="Download image">
+                        <HiOutlineDownload />
+                    </button>
+                    <button className="modal-nav prev" onClick={prevImage} aria-label="Previous image">
+                        <HiOutlineChevronLeft />
+                    </button>
+                    <button className="modal-nav next" onClick={nextImage} aria-label="Next image">
+                        <HiOutlineChevronRight />
                     </button>
                     <div className="modal-content-wrapper" onClick={(e) => e.stopPropagation()}>
                         <img 
-                            src={selectedImage} 
-                            alt="Selected space full view" 
+                            src={images[selectedIndex].src} 
+                            alt={`Selected space full view ${selectedIndex + 1}`} 
                             className={`modal-image ${isMaximized ? 'maximized' : ''}`}
                             onClick={toggleMaximize}
                         />

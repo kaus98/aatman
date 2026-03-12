@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -12,7 +13,7 @@ const Hero = () => {
                 <span className="subheading">Ranikhet • Uttarakhand</span>
                 <img src={`${import.meta.env.BASE_URL}ENGLISH-AATMAN-1024x322.png`} alt="Aatman Logo" className="hero-logo" />
                 <p className="hero-subtitle">A couture-crafted mountain home.</p>
-                <button className="cta-button">Experience Now</button>
+                <Link to="/contact-space" className="cta-button">Experience Now</Link>
             </div>
         </section>
     );

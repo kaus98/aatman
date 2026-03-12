@@ -126,7 +126,8 @@
 }
 
 .modal-close,
-.modal-maximize {
+.modal-maximize,
+.modal-download {
     position: absolute;
     background: rgba(255, 255, 255, 0.9);
     color: var(--color-text-primary);
@@ -134,7 +135,7 @@
     border-radius: 50%;
     width: 44px;
     height: 44px;
-    font-size: 24px;
+    font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,7 +146,8 @@
 }
 
 .modal-close:hover,
-.modal-maximize:hover {
+.modal-maximize:hover,
+.modal-download:hover {
     background: rgba(255, 255, 255, 1);
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -156,17 +158,57 @@
     right: 24px;
 }
 
-.modal-maximize {
+.modal-download {
     top: 24px;
     right: 84px;
 }
 
+.modal-maximize {
+    top: 24px;
+    right: 144px;
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.modal-nav:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-nav.prev {
+    left: 40px;
+}
+
+.modal-nav.next {
+    right: 40px;
+}
+
 @media (max-width: 768px) {
     .modal-close,
-    .modal-maximize {
+    .modal-maximize,
+    .modal-download {
         width: 36px;
         height: 36px;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .modal-close {
@@ -174,8 +216,27 @@
         right: 16px;
     }
 
-    .modal-maximize {
+    .modal-download {
         top: 16px;
         right: 64px;
+    }
+
+    .modal-maximize {
+        top: 16px;
+        right: 112px;
+    }
+
+    .modal-nav {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .modal-nav.prev {
+        left: 16px;
+    }
+
+    .modal-nav.next {
+        right: 16px;
     }
 }

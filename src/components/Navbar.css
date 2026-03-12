@@ -144,13 +144,15 @@
 
 .nav-links a {
     font-family: var(--font-serif);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--color-text-primary);
     text-decoration: none;
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
     transition: color var(--transition-fast);
 }
 
@@ -183,7 +185,7 @@
     }
 
     .nav-links a {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .navbar {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
@@ -7,12 +7,12 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <Router basename="/aatman">
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact-space" element={<Contact />} />
       </Routes>
     </Router>
   );
