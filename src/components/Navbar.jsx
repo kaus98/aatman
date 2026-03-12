@@ -25,7 +25,7 @@ const Navbar = () => {
 
                     <h1 className={`nav-logo-text ${scrolled ? 'visible' : ''}`}>
                         <Link to="/" onClick={() => setIsOpen(false)}>
-                            <img src="/ENGLISH-AATMAN-1024x322.png" alt="Aatman Logo" className="navbar-logo" />
+                            <img src={`${import.meta.env.BASE_URL}ENGLISH-AATMAN-1024x322.png`} alt="Aatman Logo" className="navbar-logo" />
                         </Link>
                     </h1>
                 </div>
