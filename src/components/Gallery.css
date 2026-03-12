@@ -97,7 +97,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -135,9 +135,9 @@
 .modal-close,
 .modal-maximize {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     width: 44px;
     height: 44px;
@@ -153,8 +153,9 @@
 
 .modal-close:hover,
 .modal-maximize:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 1);
     transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .modal-close {

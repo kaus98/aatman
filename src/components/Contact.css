@@ -2,7 +2,7 @@
     background-color: var(--color-bg-lighter);
     padding: 10rem 4rem 2rem;
     /* Increased top padding */
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@
     width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
     color: var(--color-text-primary);
     font-family: var(--font-sans);
@@ -89,7 +89,7 @@
 .submit-btn:hover {
     background: var(--color-accent);
     color: var(--color-bg-dark);
-    box-shadow: 0 0 20px rgba(196, 167, 119, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .instagram-container {
@@ -102,7 +102,7 @@
     display: inline-block;
     background: transparent;
     color: var(--color-text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 1rem 3rem;
     font-family: var(--font-sans);
     text-transform: uppercase;
@@ -118,12 +118,12 @@
     background: var(--color-text-primary);
     color: var(--color-bg-dark);
     border-color: var(--color-text-primary);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .footer {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 2rem;
     color: var(--color-text-muted);
     font-size: 0.85rem;
